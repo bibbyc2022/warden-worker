@@ -43,6 +43,9 @@ jobs:
               run: sed -i "s/\${D1_DATABASE_ID}/${{ secrets.D1_DATABASE_ID }}/g" wrangler.toml
 
             - uses: cloudflare/wrangler-action@v3
+              with:
+              wranglerVersion: "4.56.0"
+
               id: cf
               env:
                   D1_DATABASE_ID: ${{ secrets.D1_DATABASE_ID }}
